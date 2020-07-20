@@ -1,3 +1,4 @@
+//한줄 읽음
 var fs = require('fs');
 var readline = require('readline');
 
