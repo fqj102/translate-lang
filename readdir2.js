@@ -15,4 +15,5 @@ function getFiles (dir, files_){
     return files_;
 }
 
-console.log(getFiles('C:\\project\\PHP_WEB'))
+// console.log(getFiles('C:\\project\\PHP_WEB'))
+console.log(getFiles('C:\\\\project\\\\PHP_WEB/app/'))
