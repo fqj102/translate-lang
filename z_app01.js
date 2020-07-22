@@ -10,7 +10,6 @@ function fn_convert(text, from, to, fn){
     });
 }
 
-
 // 한 줄씩 읽어들이는 함수 정의
 function readLine(filename) {
     var instream = fs.createReadStream(filename);

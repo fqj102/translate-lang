@@ -13,6 +13,7 @@
     "@k3rn31p4nic/google-translate-api": "^1.1.1",
     "@vitalets/google-translate-api": "^3.0.0",
     "google-translate-api": "^2.3.0",
+    "mysql": "^2.18.1",
     "tunnel": "^0.0.6"
   }
 }
