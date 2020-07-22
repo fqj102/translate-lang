@@ -17,7 +17,9 @@ const sleep = (ms) => {
 }
 const lang = {ko:'ko',zh:'zh-CN',en:'en',de:'de'};
 const lineArr = [];
-// 한 줄씩 읽어들이는 함수 정의
+const fromLang = lang.ko;
+const toLang = lang.de;
+// read by line
 async function readLine(filename) {
     var instream = fs.createReadStream(filename);
     var reader = readline.createInterface(instream, process.stdout);
@@ -36,20 +38,22 @@ async function readLine(filename) {
         for(let i=0;i<lineArr.length;i++) {
             const li = lineArr[i];
             message+=('\n'+li.ko);
+            //limit 100 line
             if(i%100 == 99) {
                 await sleep(2000);
-                fn_convert(message,lang.ko,lang.de);
+                fn_convert(message,fromLang,toLang);
                 message = '';
             }
         }
+        await sleep(2000);
         if(message) {
-            fn_convert(message,lang.ko,lang.de);
+            fn_convert(message,fromLang,toLang);
         }
         //lineArr.map(li=>console.log(li));
 
     });
 }
 
-// 함수 실행
-var filename = 'C:\\php_app.message.txt';
+// start
+var filename = 'C:\\php_app.message_public.txt';
 readLine(filename);
